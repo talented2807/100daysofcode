@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+
+    int n,m,E;
+    cin>>n>>m>>E;
+
+    int mat[n][m];
+
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            cin>>mat[i][j];
+        }
+    }
+    int r=0;
+    int c=m-1;
+    bool flag=false;
+    while(r<n and c>0){
+        if(mat[r][c]==E){
+            flag=true;
+        }
+        if(mat[r][c]>E){
+            c--;
+        }
+        else{
+            r++;
+        }
+    }
+    if(flag){
+        cout<<"Element E found"<<endl;
+    }
+    else{
+        cout<<"Element E not found"<<endl;
+    }
+return 0;
+}
