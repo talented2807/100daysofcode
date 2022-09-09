@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cin>>n;
+    cin.ignore();
+
+    char arr[n+1];
+
+    cin.getline(arr,n);
+    cin.ignore();
+
+    int i=0;
+
+    int currLength=0;int maxLength=0;
+    while(true){
+
+        if(arr[i]==' '|| arr[i]=='\0')
+        {
+           if(currLength>maxLength){
+            maxLength=currLength;
+           }
+           currLength=0;
+        }
+        else 
+        currLength++;
+
+        if(arr[i]=='\0')
+           break;
+        i++;
+    }
+
+cout<<maxLength<<endl;
+
+}
