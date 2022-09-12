@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+int decimalToBinary(int n){
+    int num=0;
+    while(n>0){
+        num=num*10+n%2;
+        n=n/2;
+    }
+    int reverse=0;
+    int count=0;
+    while(num){
+        
+        if(num%10==1){
+            count++;
+        }
+        reverse=reverse*10+num%10;
+        
+        num=num/10;
+    }
+    return count;
+    
+}
+int main(){
+    int n;
+    cin>>n;
+
+    cout<<decimalToBinary(n);
+}
